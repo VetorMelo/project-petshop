@@ -35,4 +35,29 @@ public class PetMachine {
 
         shampoo += 2;
     }
+
+    public int getWater() {
+        return water;
+    }
+
+    public int getShampoo() {
+        return shampoo;
+    }
+
+    public boolean hasPet(){
+        return pet != null;
+    }
+
+    public void setPet(Pet pet) {
+        if (!this.clean){
+            System.out.println("A máquina está suja, para colocar o pet é necessário limpar")
+            return;
+        }
+        if (hasPet()){
+            System.out.println("O pet " + this.pet.getName() + " está na máquina nesse momento");
+            return;
+        }
+
+        this.pet = pet;
+    }
 }
